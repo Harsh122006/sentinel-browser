@@ -5,19 +5,17 @@ function createWindow() {
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: false
+      nodeIntegration: false,
+      contextIsolation: true,
+      webviewTag: true   // REQUIRED for real browsing
     }
   });
 
-  // TEMP: load a public website
-  // Later we will load YOUR website
   win.loadFile("index.html");
 }
 
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
-    app.quit();
-  }
+  if (process.platform !== "darwin") app.quit();
 });
