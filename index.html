@@ -3,21 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sentinel Browser</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #address {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+    }
+    webview {
+      width: 100%;
+      height: calc(100vh - 44px);
+    }
+  </style>
 </head>
 <body>
 
-  <input
-    id="address"
-    placeholder="Enter URL and press Enter"
-    style="width:100%; padding:10px; font-size:16px;"
-  />
+<input
+  id="address"
+  placeholder="Enter URL and press Enter"
+/>
 
-  <iframe
-    id="view"
-    src="https://example.com"
-    style="width:100%; height:90vh; border:none;"
-  ></iframe>
+<webview
+  id="view"
+  src="https://example.com"
+></webview>
 
-  <script src="renderer.js"></script>
+<script src="renderer.js"></script>
+
 </body>
 </html>
